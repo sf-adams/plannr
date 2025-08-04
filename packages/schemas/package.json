@@ -1,0 +1,21 @@
+{
+  "name": "@plannr/schemas",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./user": {
+      "types": "./src/user.schema.ts",
+      "default": "./dist/user.schema.js"
+    }
+  },
+  "devDependencies": {
+    "@plannr/typescript-config": "workspace:*",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "zod": "^4.0.13"
+  }
+}
