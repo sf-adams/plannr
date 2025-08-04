@@ -1,0 +1,92 @@
+name: Bug Report
+description: Report a bug with detailed information to help us reproduce and resolve it.
+title: "[Bug]: <title>"
+labels: ["type: bug", "status: in review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+
+        Please fill out this form thoroughly to help us understand, reproduce, and fix the issue. Be as detailed as possible. Thank you!
+
+  - type: input
+    id: bug_description
+    attributes:
+      label: Description of the Problem
+      description: What is the issue? Please provide a concise summary of the problem.
+      placeholder: Describe the bug in a few sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How do you trigger this bug? Please walk us through it step by step.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened instead?
+      placeholder: Describe what actually happened.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical - blocks further work or usage
+        - High - impacts major functionality
+        - Medium - noticeable but doesn't block usage
+        - Low - minor or cosmetic issue
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide details about your environment where the issue occurred (e.g., OS, Browser, App version).
+      placeholder: e.g., iOS 15, Chrome 95, App v1.2.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context or Screenshots
+      description: Any additional context that would help us understand the issue better, including screenshots or error logs if possible.
+
+  - type: checkboxes
+    id: validations
+    attributes:
+      label: Validation Checklist
+      description: Please confirm the following before submitting the bug report.
+      options:
+        - label: I have checked that this bug was not already reported
+          required: true
+        - label: I have confirmed that this bug occurs on the latest version
+          required: true
+        - label: I have read and followed the Code of Conduct and Contributing Guidelines
+          required: true

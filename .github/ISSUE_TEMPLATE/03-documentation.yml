@@ -1,0 +1,47 @@
+name: Documentation Update
+description: Suggest updates or improvements for the documentation.
+title: "[Docs]: <title>"
+labels: ["type: documentation", "status: in review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Documentation Update
+
+        Use this template to suggest improvements or additions to the documentation.
+
+  - type: input
+    id: current_docs_location
+    attributes:
+      label: Current Documentation Section
+      description: Where in the documentation does this update apply?
+      placeholder: e.g., README.md, Contributing Guidelines, .github directory
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed Changes
+      description: Describe the updates or changes you'd like to see in this section.
+      placeholder: e.g., Update the README.md to include setup instructions for new users.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason_for_change
+    attributes:
+      label: Reason for Change
+      description: Explain why this change is important or helpful.
+      placeholder: e.g., The setup instructions are currently unclear for new developers.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context or Examples
+      description: Add any examples, screenshots, or further context that could help clarify this update.
+      placeholder: e.g., A screenshot showing an error, or a code snippet of the proposed addition.
+    validations:
+      required: false

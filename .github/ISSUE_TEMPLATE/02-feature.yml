@@ -1,0 +1,70 @@
+name: Feature Request
+description: Suggest a new feature or improvement for Plannr
+title: "[Feature]: <title>"
+labels: ["type: feature", "status: in review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+
+        Please fill out the details below to help us understand your feature request.
+
+  - type: input
+    id: problem_description
+    attributes:
+      label: Problem Description
+      description: Describe the problem or pain point this feature will address.
+      placeholder: e.g., Users find it difficult to track other user activity in real time.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you envision the feature solving the problem.
+      placeholder: e.g., Use web sockets to track user activity.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives_considered
+    attributes:
+      label: Alternatives Considered
+      description: List any alternative solutions you've thought of and why you chose this approach.
+      placeholder: e.g., A simpler solution could be no real-time tracking, but users don't conflict with each other.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other context or screenshots that may help clarify the feature request.
+      placeholder: e.g., Screenshots, sketches, relevant links, etc.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority_level
+    attributes:
+      label: Priority Level
+      description: Select a priority level based on the feature's impact.
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: validations
+    attributes:
+      label: Validation Checks
+      description: "Please confirm the following before submitting your feature request:"
+      options:
+        - label: I have checked that this feature request doesn't already exist.
+          required: true
+        - label: I am willing to work on this feature and submit a pull request.
+          required: false
