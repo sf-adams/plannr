@@ -3,44 +3,44 @@ import {
   ConflictException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { User, UserDocument } from '../user/user.schema';
-import { SignupDto } from './dto/signup.dto';
+import { User, UserDocument } from '../users/user.schema';
+import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class AuthService {
-  constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
+  constructor(private readonly usersService: UsersService) {}
 
-  async signup(signupDto: SignupDto): Promise<User> {
-    const { email, password } = signupDto;
+  async register(registerDto: RegisterDto): Promise<UserDocument> {
+    const { email, password } = registerDto;
 
-    const existingUser = await this.userModel.findOne({ email });
+    const existingUser = await this.usersService.findByEmail(email);
     if (existingUser) {
       throw new ConflictException('Email already registered');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new this.userModel({
+    const newUser = await this.usersService.createUser({
       email,
       password: hashedPassword,
     });
 
-    return newUser.save();
-  }
-
-  async findByEmail(email: string): Promise<User | null> {
-    return this.userModel.findOne({ email }).exec();
+    return newUser;
   }
 
   async validateUser(loginDto: LoginDto): Promise<User> {
-    const { email } = loginDto;
-    const user = await this.findByEmail(email);
+    const { email, password } = loginDto;
+    const user = await this.usersService.findByEmail(email);
 
     if (!user) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
       throw new UnauthorizedException('Invalid credentials');
     }
 
