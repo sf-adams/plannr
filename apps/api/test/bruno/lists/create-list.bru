@@ -1,0 +1,27 @@
+meta {
+  name: create-list
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:4000/api/lists
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODkxMTNjM2Y3MjMyNGMyZTA3OGYyMjciLCJlbWFpbCI6ImJydW5vMkBleGFtcGxlLmNvbSIsImlhdCI6MTc1NDQxNzI5MiwiZXhwIjoxNzU0NDIwODkyfQ.WC6nTbT9Yh8NZ-DBvaKJPjFgXI96x3Su0MXULTvwuV0
+}
+
+body:json {
+  {
+    "title": "To Do",
+    "boardId": "689234c2f4fb433639ef2ba5"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

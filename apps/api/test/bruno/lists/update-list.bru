@@ -1,0 +1,25 @@
+meta {
+  name: update-list
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:4000/api/lists/{{listId}}
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODkxMTNjM2Y3MjMyNGMyZTA3OGYyMjciLCJlbWFpbCI6ImJydW5vMkBleGFtcGxlLmNvbSIsImlhdCI6MTc1NDQxMjAxNSwiZXhwIjoxNzU0NDE1NjE1fQ.j3MgwTRpqpttQXQY0NPXpvfGjSeiSwGwVoKBALNEqsc
+}
+
+body:json {
+  {
+    "title": "Updated List Title"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
