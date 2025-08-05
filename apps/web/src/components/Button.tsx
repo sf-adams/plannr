@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import styles from "./button.module.css";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: "hero" | "outline";
   size?: "xl" | "md" | "sm";
@@ -14,6 +14,7 @@ export const Button = ({
   variant = "hero",
   size = "md",
   className,
+  ...props
 }: ButtonProps) => {
   const combinedClassName = clsx(
     styles.button,
@@ -22,5 +23,9 @@ export const Button = ({
     className
   );
 
-  return <button className={combinedClassName}>{children}</button>;
+  return (
+    <button className={combinedClassName} {...props}>
+      {children}
+    </button>
+  );
 };

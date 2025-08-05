@@ -6,6 +6,8 @@ import {
   Body,
   UseGuards,
   Req,
+  NotFoundException,
+  ForbiddenException,
 } from '@nestjs/common';
 import { BoardsService } from './boards.service';
 import { AuthGuard } from '../auth/auth.guard';
@@ -22,6 +24,25 @@ export class BoardsController {
   async getMyBoards(@Req() req: RequestWithUser) {
     const userId = req.user.sub;
     return this.boardsService.findUserBoards(userId);
+  }
+
+  @Get(':id')
+  async getBoardById(@Req() req: RequestWithUser, @Param('id') id: string) {
+    const userId = req.user.sub;
+    const board = await this.boardsService.findBoardById(id);
+
+    if (!board) {
+      throw new NotFoundException('Board not found');
+    }
+
+    if (
+      board.owner.toString() !== userId &&
+      !board.members.some((member) => member.toString() === userId)
+    ) {
+      throw new ForbiddenException('Access denied');
+    }
+
+    return board;
   }
 
   @Post()

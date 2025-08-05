@@ -1,14 +1,15 @@
 // Routes
 import { Routes, Route } from "react-router";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import Login from "@/pages/Login";
+import Register from "@/pages/Register";
+import Dashboard from "@/pages/Dashboard";
+import Home from "@/pages/Home";
+import BoardPage from "@/pages/Board";
+import NotFound from "@/pages/NotFound";
 
 // Components
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "@/components/PrivateRoute";
 import "./App.css";
-import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -21,6 +22,14 @@ export default function App() {
         element={
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/board/:id"
+        element={
+          <PrivateRoute>
+            <BoardPage />
           </PrivateRoute>
         }
       />

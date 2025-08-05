@@ -23,6 +23,10 @@ export class BoardsService {
       .exec();
   }
 
+  async findBoardById(id: string): Promise<Board | null> {
+    return this.boardModel.findById(id).exec();
+  }
+
   async createBoard(userId: string, dto: CreateBoardDto): Promise<Board> {
     const board = new this.boardModel({
       ...dto,
