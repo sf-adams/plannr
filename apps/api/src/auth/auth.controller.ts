@@ -4,6 +4,7 @@ import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { UserEntity } from 'src/users/user.entity';
 import { Public } from './public.decorator';
+import { plainToInstance } from 'class-transformer';
 
 @Controller('auth')
 export class AuthController {
@@ -13,7 +14,10 @@ export class AuthController {
   @Post('register')
   async register(@Body() registerDto: RegisterDto) {
     const user = await this.authService.register(registerDto);
-    return new UserEntity(user);
+
+    const plainUser = user.toObject();
+
+    return new UserEntity(plainUser);
   }
 
   @Public()
