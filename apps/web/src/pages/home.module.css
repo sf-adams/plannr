@@ -1,21 +1,14 @@
 .page {
   min-height: 100vh;
   background: var(--gradient-bg);
-  position: relative;
-  overflow: hidden;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 5rem 1rem;
 }
 
 .heroContent {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .iconWrapper {
@@ -31,16 +24,6 @@
   animation: pulse-glow 2s infinite;
 }
 
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: var(--shadow-glow);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(241, 245, 255, 0.6);
-  }
-}
-
 .icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -50,8 +33,7 @@
 .title {
   font-size: 3rem;
   font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
 }
 
 @media (min-width: 768px) {
@@ -84,14 +66,6 @@
   .buttons {
     flex-direction: row;
   }
-}
-
-.button {
-  min-width: 12rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-foreground);
 }
 
 .arrowIcon {
