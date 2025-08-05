@@ -7,9 +7,9 @@ import { ConfigService } from '@nestjs/config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
+
   const configService = app.get(ConfigService);
   await app.listen(configService.get('PORT') ?? 3000);
-
-  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 }
 void bootstrap();
