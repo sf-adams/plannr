@@ -23,12 +23,15 @@
 
 .outline {
   background: transparent;
-  border: var(--secondary);
+  border: 2px solid var(--secondary);
   color: var(--secondary-foreground);
 }
 
 .outline:hover {
-  background-color: #f3f0ff;
+  border: 2px solid var(--secondary-foreground);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Sizes */
