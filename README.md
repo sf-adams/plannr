@@ -6,7 +6,15 @@ Build a mini “Collaborative Task Board” (a simplified Trello-like app) that 
 
 ### Getting Started
 
-Run the following command:
+- Git clone
+
+2. Run docker services:
+
+```sh
+pnpm docker:up
+```
+
+3. Run the following command:
 
 ```sh
 pnpm install
@@ -30,3 +38,13 @@ _Feel free to substitute equivalent frameworks (e.g. Next.js, Fastify, Prisma) a
 - [Turborepo](https://turborepo.com/docs) - Build system for codebases, designed for scaling monorepos
 - [GitHub CLI](https://cli.github.com/manual/) - Command-line interface to GitHub for use in your terminal or your scripts
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) - Specification for adding human and machine readable meaning to commit messages
+
+### Frontend
+
+- [Vite](https://vite.dev/guide/) - Build tool that aims to provide a faster and leaner development experience for modern web projects
+
+### Backend
+
+- [NestJS](https://docs.nestjs.com/) - Framework for building efficient, scalable Node.js server-side applications
+- [Zod](https://zod.dev/) - TypeScript-frst schema validation with static type inference
+- [Bruno](https://docs.usebruno.com/) - Git-friendly and offline-first open-source API client
