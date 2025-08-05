@@ -1,0 +1,25 @@
+meta {
+  name: add-member
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:4000/api/boards/689234c2f4fb433639ef2ba5/members
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODkxMTNjM2Y3MjMyNGMyZTA3OGYyMjciLCJlbWFpbCI6ImJydW5vMkBleGFtcGxlLmNvbSIsImlhdCI6MTc1NDQxMjAxNSwiZXhwIjoxNzU0NDE1NjE1fQ.j3MgwTRpqpttQXQY0NPXpvfGjSeiSwGwVoKBALNEqsc
+}
+
+body:json {
+  {
+    "userId": "68921bc6f78b84a2ffc55b31"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
