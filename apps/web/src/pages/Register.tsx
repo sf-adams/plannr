@@ -29,7 +29,6 @@ const Register = () => {
         password: data.password,
       });
 
-      alert("Account created!");
       navigate("/login");
     } catch (err: any) {
       const message =
@@ -49,12 +48,11 @@ const Register = () => {
           </div>
           <h1 className={styles.title}>Join Plannr</h1>
           <p className={styles.subtitle}>
-            Create your account to start organizing
+            Create your account to start organising
           </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-          {/* Email */}
           <div className={styles.field}>
             <label htmlFor="email">Email</label>
             <input
@@ -72,7 +70,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Password */}
           <div className={styles.field}>
             <label htmlFor="password">Password</label>
             <input

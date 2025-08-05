@@ -14,7 +14,7 @@ const Home = () => {
         <h1 className={styles.title}>Plannr</h1>
 
         <p className={styles.subtitle}>
-          The collaborative task board that brings your team together. Organize
+          The collaborative task board that brings your team together. Organise
           projects, track progress, and achieve goals faster.
         </p>
 
