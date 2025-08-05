@@ -42,6 +42,7 @@ _Feel free to substitute equivalent frameworks (e.g. Next.js, Fastify, Prisma) a
 ### Frontend
 
 - [Vite](https://vite.dev/guide/) - Build tool that aims to provide a faster and leaner development experience for modern web projects
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react) - Open-source icon library that provides 1000+ vector files for displaying icons and symbols
 
 ### Backend
 
