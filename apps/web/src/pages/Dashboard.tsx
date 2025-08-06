@@ -3,35 +3,34 @@ import styles from "./dashboard.module.css";
 import { fetchUserBoards } from "@/api/boards";
 import { Button } from "@/components/Button";
 import { Plus, Folder, Calendar, Users, LogOut } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type { Board } from "@/types/board";
+import CreateBoardModal from "@/components/CreateBoardModal";
 
 const Dashboard = () => {
   const [boards, setBoards] = useState<Board[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
+  const loadBoards = async () => {
+    try {
+      const data = await fetchUserBoards();
+      setBoards(data);
+    } catch (err) {
+      console.error("Error loading boards:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const loadBoards = async () => {
-      try {
-        const data = await fetchUserBoards();
-        setBoards(data);
-      } catch (err) {
-        console.error("Error loading boards:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     loadBoards();
   }, []);
 
-  const handleCreateBoard = () => {
-    console.log("Board creation feature coming soon!");
-  };
-
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   return (
@@ -67,7 +66,7 @@ const Dashboard = () => {
               Organize your projects and collaborate with your team
             </p>
           </div>
-          <Button onClick={handleCreateBoard} variant="hero" size="md">
+          <Button onClick={() => setShowModal(true)} variant="hero" size="md">
             <Plus className="w-5 h-5 mr-2" />
             Create Board
           </Button>
@@ -88,7 +87,10 @@ const Dashboard = () => {
                   <div className={styles.cardContent}>
                     <h3 className={styles.cardTitle}>{board.title}</h3>
                     <p className={styles.cardDescription}>
-                      {board.description}
+                      {
+                        board.description ||
+                          "\u00A0" /* non-breaking space to preserve height */
+                      }
                     </p>
                     <div className={styles.cardMeta}>
                       <div className={styles.metaItem}>
@@ -105,7 +107,10 @@ const Dashboard = () => {
               </Link>
             ))}
 
-            <div onClick={handleCreateBoard} className={styles.createCard}>
+            <div
+              onClick={() => setShowModal(true)}
+              className={styles.createCard}
+            >
               <div className={styles.createCardContent}>
                 <div className={styles.createIcon}>
                   <Plus />
@@ -117,6 +122,13 @@ const Dashboard = () => {
           </div>
         )}
       </main>
+
+      {showModal && (
+        <CreateBoardModal
+          onClose={() => setShowModal(false)}
+          onCreated={() => loadBoards()}
+        />
+      )}
     </div>
   );
 };

@@ -1,12 +1,10 @@
 .dashboard {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #f9fafb, #eef2f7);
 }
 
 .header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--secondary-foreground);
   backdrop-filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .headerContainer {
@@ -66,16 +64,38 @@
 .boardGrid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.boardCard {
+@media (max-width: 1024px) {
+  .boardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .boardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* @media (min-width: 1440px) {
+  .boardGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+} */
+
+.boardCard,
+.createCard {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
   background-color: white;
 }
 
@@ -84,12 +104,31 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+.createCard {
+  background-color: transparent;
+  border: 2px solid var(--secondary-foreground);
+  color: var(--secondary-foreground);
+  cursor: pointer;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.createCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
 .cardBanner {
   height: 120px;
   background: linear-gradient(to right, #4f46e5, #7c3aed);
 }
 
 .cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
 }
 
@@ -103,6 +142,7 @@
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 1rem;
+  min-height: 3em;
 }
 
 .cardMeta {
@@ -110,4 +150,26 @@
   justify-content: space-between;
   font-size: 0.8rem;
   color: #999;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+}
+
+.createCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.createIcon {
+  margin-bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

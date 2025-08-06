@@ -20,6 +20,7 @@ export class BoardsService {
       .find({
         $or: [{ owner: userId }, { members: userId }],
       })
+      .sort({ updatedAt: -1 })
       .exec();
   }
 
