@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Create landing page",
+    "description": "Use Figma for the wireframes",
+    "listTitle": "To Do",
+    "order": 1
+  },
+  {
+    "title": "Write blog post",
+    "description": "Draft content for product launch",
+    "listTitle": "To Do",
+    "order": 2
+  },
+  {
+    "title": "Set up analytics",
+    "description": "Integrate Google Analytics on site",
+    "listTitle": "In Progress",
+    "order": 1
+  },
+  {
+    "title": "Prepare press release",
+    "description": "Contact PR agencies",
+    "listTitle": "In Progress",
+    "order": 2
+  },
+  {
+    "title": "Schedule social media",
+    "description": "Prepare 5 posts in Buffer",
+    "listTitle": "Done",
+    "order": 1
+  },
+  {
+    "title": "Launch email campaign",
+    "description": "Create segmented email lists",
+    "listTitle": "Done",
+    "order": 2
+  },
+  {
+    "title": "Create product specs",
+    "description": "Detail product features and requirements",
+    "listTitle": "Backlog",
+    "order": 1
+  },
+  {
+    "title": "Plan sprint tasks",
+    "description": "Break down user stories for next sprint",
+    "listTitle": "Sprint Planning",
+    "order": 1
+  },
+  {
+    "title": "Review design mockups",
+    "description": "Feedback on UI/UX designs",
+    "listTitle": "Review",
+    "order": 1
+  },
+  {
+    "title": "Respond to support tickets",
+    "description": "Resolve open customer issues",
+    "listTitle": "Open Tickets",
+    "order": 1
+  },
+  {
+    "title": "Follow up with customers",
+    "description": "Request more info on pending tickets",
+    "listTitle": "Waiting on Customer",
+    "order": 1
+  },
+  {
+    "title": "Close resolved tickets",
+    "description": "Mark tickets as resolved in system",
+    "listTitle": "Resolved",
+    "order": 1
+  },
+  {
+    "title": "Qualify new leads",
+    "description": "Assess potential clients",
+    "listTitle": "Leads",
+    "order": 1
+  },
+  {
+    "title": "Negotiate contracts",
+    "description": "Discuss terms and pricing",
+    "listTitle": "Negotiations",
+    "order": 1
+  },
+  {
+    "title": "Sign contracts",
+    "description": "Close deals with new customers",
+    "listTitle": "Closed Deals",
+    "order": 1
+  },
+  {
+    "title": "Brainstorm campaign ideas",
+    "description": "Gather team input for next marketing push",
+    "listTitle": "Planned Campaigns",
+    "order": 1
+  },
+  {
+    "title": "Launch campaign",
+    "description": "Go live with marketing campaign",
+    "listTitle": "Active Campaigns",
+    "order": 1
+  },
+  {
+    "title": "Analyze campaign results",
+    "description": "Review metrics and KPIs",
+    "listTitle": "Completed Campaigns",
+    "order": 1
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "title": "To Do",
+    "boardTitle": "Launch Roadmap"
+  },
+  {
+    "title": "In Progress",
+    "boardTitle": "Launch Roadmap"
+  },
+  {
+    "title": "Done",
+    "boardTitle": "Launch Roadmap"
+  },
+  {
+    "title": "Backlog",
+    "boardTitle": "Product Development"
+  },
+  {
+    "title": "Sprint Planning",
+    "boardTitle": "Product Development"
+  },
+  {
+    "title": "Review",
+    "boardTitle": "Product Development"
+  },
+  {
+    "title": "Open Tickets",
+    "boardTitle": "Customer Support"
+  },
+  {
+    "title": "Waiting on Customer",
+    "boardTitle": "Customer Support"
+  },
+  {
+    "title": "Resolved",
+    "boardTitle": "Customer Support"
+  },
+  {
+    "title": "Leads",
+    "boardTitle": "Sales Pipeline"
+  },
+  {
+    "title": "Negotiations",
+    "boardTitle": "Sales Pipeline"
+  },
+  {
+    "title": "Closed Deals",
+    "boardTitle": "Sales Pipeline"
+  },
+  {
+    "title": "Planned Campaigns",
+    "boardTitle": "Marketing"
+  },
+  {
+    "title": "Active Campaigns",
+    "boardTitle": "Marketing"
+  },
+  {
+    "title": "Completed Campaigns",
+    "boardTitle": "Marketing"
+  }
+]

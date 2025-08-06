@@ -6,18 +6,57 @@ Build a mini “Collaborative Task Board” (a simplified Trello-like app) that 
 
 ### Getting Started
 
-- Git clone
+1. Clone the repo
 
-2. Run docker services:
+```sh
+git clone https://github.com/sf-adams/plannr.git
+cd plannr
+```
+
+2. Install depencies across all apps (web + api):
+
+```sh
+pnpm install
+```
+
+3. Start Docker (MongoDB):
 
 ```sh
 pnpm docker:up
 ```
 
-3. Run the following command:
+4. Create .env files (Can leave )
 
 ```sh
-pnpm install
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
+
+```
+
+5. Seed the database (creates demo users, boards, lists and cards):
+
+```sh
+pnpm seed
+```
+
+6. Start the dev servers (API + Web)
+
+```sh
+pnpm dev
+```
+
+7. Log in to User 1
+
+```sh
+Email: sam@example.com
+Password: Test9876
+```
+
+8. Log in to User 2 (In a separate private browser)
+
+```sh
+Email: adams@example.com
+Password: Test9876
 ```
 
 ### Tech Stack
