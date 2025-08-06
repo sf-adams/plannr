@@ -14,6 +14,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.536.0",
     "react": "^19.1.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.62.0",
     "react-router": "^7.7.1"
@@ -24,6 +25,7 @@
     "@plannr/typescript-config": "workspace:*",
     "@plannr/ui": "workspace:*",
     "@types/react": "^19.1.8",
+    "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "eslint": "^9.30.1",

@@ -6,30 +6,67 @@ Build a mini “Collaborative Task Board” (a simplified Trello-like app) that 
 
 ### Getting Started
 
-- Git clone
-
-2. Run docker services:
+1. Clone the repo
 
 ```sh
-pnpm docker:up
+git clone https://github.com/sf-adams/plannr.git
+cd plannr
 ```
 
-3. Run the following command:
+2. Install depencies across all apps (web + api):
 
 ```sh
 pnpm install
 ```
 
+3. Start Docker (MongoDB):
+
+```sh
+pnpm docker:up
+```
+
+4. Create .env files (Can leave )
+
+```sh
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
+
+```
+
+5. Seed the database (creates demo users, boards, lists and cards):
+
+```sh
+pnpm seed
+```
+
+6. Start the dev servers (API + Web)
+
+```sh
+pnpm dev
+```
+
+7. Log in to User 1
+
+```sh
+Email: sam@example.com
+Password: Test9876
+```
+
+8. Log in to User 2 (In a separate private browser)
+
+```sh
+Email: adams@example.com
+Password: Test9876
+```
+
 ### Tech Stack
 
-- [ ] Front-end: React (with Hooks) + TypeScript
-- [ ] Back-end: Node.js + NestJS + TypeScript
-- [ ] Database: MongoDB
+- [x] Front-end: React (with Hooks) + TypeScript
+- [x] Back-end: Node.js + NestJS + TypeScript
+- [x] Database: MongoDB
 - [ ] Real-time: WebSockets (e.g. Socket.IO)
-- [ ] Auth: JWT-based signup/login
-- [ ] Testing: Jest (unit + integration)
-
-_Feel free to substitute equivalent frameworks (e.g. Next.js, Fastify, Prisma) as long as you can justify your choices._
+- [x] Auth: JWT-based signup/login
+- [x] Testing: Jest (unit + integration)
 
 ## Project Links
 
@@ -42,7 +79,12 @@ _Feel free to substitute equivalent frameworks (e.g. Next.js, Fastify, Prisma) a
 ### Frontend
 
 - [Vite](https://vite.dev/guide/) - Build tool that aims to provide a faster and leaner development experience for modern web projects
+- [React](https://react.dev/) – Build user interfaces out of individual pieces called components
+- [TypeScript](https://www.typescriptlang.org/) – Static typing for JavaScript
 - [Lucide React](https://lucide.dev/guide/packages/lucide-react) - Open-source icon library that provides 1000+ vector files for displaying icons and symbols
+- [Axios](https://axios-http.com/docs/intro) - Promise-based HTTP Client for node.js and the browser
+- [React Router](https://reactrouter.com/home) - Multi-strategy router for React bridging the gap from React 18 to React 19
+- [React Hook Form](https://www.react-hook-form.com/api/useform/) - Performant, flexible and extensible forms with easy-to-use validation
 
 ### Backend
 

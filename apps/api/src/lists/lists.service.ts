@@ -31,6 +31,7 @@ export class ListsService {
   }
 
   async findListsByBoard(boardId: string): Promise<List[]> {
-    return this.listModel.find({ board: boardId }).exec();
+    const objectId = new Types.ObjectId(boardId);
+    return this.listModel.find({ board: objectId }).exec();
   }
 }

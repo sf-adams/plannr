@@ -3,17 +3,17 @@ import { Document, Types } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class Card extends Document {
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   title: string;
 
-  @Prop()
+  @Prop({ type: String })
   description?: string;
 
   @Prop({ type: Types.ObjectId, ref: 'List', required: true })
   list: Types.ObjectId;
 
-  @Prop({ required: true })
-  order: number; // position within the list
+  @Prop({ type: Number, required: true })
+  order: number;
 }
 
 export const CardSchema = SchemaFactory.createForClass(Card);

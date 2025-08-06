@@ -3,7 +3,7 @@ import { Document, Types } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class List extends Document {
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   title: string;
 
   @Prop({ type: Types.ObjectId, ref: 'Board', required: true })

@@ -1,0 +1,23 @@
+meta {
+  name: get-all-list-cards
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:4000/api/cards/list/:listId
+  body: none
+  auth: inherit
+}
+
+params:path {
+  listId: 68931ab5b8dc6c1fab931c46
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODkzMWFiNWI4ZGM2YzFmYWI5MzFjMzYiLCJlbWFpbCI6InNhbUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NDQ3NTQzMiwiZXhwIjoxNzU0NDc5MDMyfQ.NzntaFZGVeE3tHr1g9SIN63dRpti8PNTTf8WgmajB8g
+}
+
+settings {
+  encodeUrl: true
+}
