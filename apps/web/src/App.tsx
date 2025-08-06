@@ -4,7 +4,7 @@ import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import Dashboard from "@/pages/Dashboard";
 import Home from "@/pages/Home";
-import BoardPage from "@/pages/Board";
+import Board from "@/pages/Board";
 import NotFound from "@/pages/NotFound";
 
 // Components
@@ -29,7 +29,7 @@ export default function App() {
         path="/board/:id"
         element={
           <PrivateRoute>
-            <BoardPage />
+            <Board />
           </PrivateRoute>
         }
       />

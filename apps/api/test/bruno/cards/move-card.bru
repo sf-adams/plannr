@@ -1,0 +1,26 @@
+meta {
+  name: move-card
+  type: http
+  seq: 2
+}
+
+patch {
+  url: http://localhost:4000/api/cards/68931ab5b8dc6c1fab931c66/move
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODkzMWFiNWI4ZGM2YzFmYWI5MzFjMzYiLCJlbWFpbCI6InNhbUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NDQ4MzU0MSwiZXhwIjoxNzU0NDg3MTQxfQ.-WdlZs2p1-n6owAJATRoOvOP5UPmsVCgMq0nwnw1sUc
+}
+
+body:json {
+  {
+    "toListId": "68931ab5b8dc6c1fab931c45",
+    "order": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+}

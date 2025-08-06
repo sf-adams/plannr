@@ -43,6 +43,25 @@ export class CardsService {
   }
 
   async findCardsByList(listId: string): Promise<Card[]> {
-    return this.cardModel.find({ list: listId }).sort('order').exec();
+    const objectId = new Types.ObjectId(listId);
+    return this.cardModel.find({ list: objectId }).exec();
+  }
+
+  async moveCard(
+    cardId: string,
+    toListId: string,
+    order: number,
+  ): Promise<Card> {
+    const updated = await this.cardModel.findByIdAndUpdate(
+      cardId,
+      {
+        list: new Types.ObjectId(toListId),
+        order,
+      },
+      { new: true },
+    );
+
+    if (!updated) throw new NotFoundException('Card not found');
+    return updated;
   }
 }

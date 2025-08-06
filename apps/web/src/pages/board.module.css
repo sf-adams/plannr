@@ -1,0 +1,131 @@
+.boardPage {
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  align-items: center;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backButton {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.boardColor {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.boardTitle {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.boardDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.headerRight button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  margin-left: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.boardContent {
+  flex-grow: 1;
+  padding: 1rem 2rem;
+  overflow-x: auto;
+}
+
+.listsContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.list {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 280px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.listTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cards {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.cardTitle {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+}
+
+.cardDescription {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.cardAssignee {
+  font-size: 0.8rem;
+  color: #eee;
+}
+
+.addCardButton,
+.addListButton {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: border-color 0.2s;
+}
+
+.addCardButton:hover,
+.addListButton:hover {
+  border-color: #fff;
+}
+
+.addList {
+  display: flex;
+  align-items: center;
+}
